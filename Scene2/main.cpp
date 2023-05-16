@@ -14,6 +14,30 @@ void renderBitmapString(float x, float y, float z, void *font, char *string) {
         glutBitmapCharacter(font, *c);
     }
 }
+void legShoe(){
+glPushMatrix();
+glScalef(0.7f,1.0f,0.0f);
+glTranslatef(0.2f,-0.68f,0.0f);
+      // Draw the legs
+    glColor3f(0.3, 0.3, 0.3); // Dark grey leg color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.05, -0.6);
+    glVertex2f(-0.05, -0.6);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(0.1, -1.0);
+    glEnd();
+
+    // Draw the shoes
+    glColor3f(0.1, 0.1, 0.1); // Black shoe color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.1, -1.0);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(-0.15, -1.1);
+    glVertex2f(0.15, -1.1);
+    glEnd();
+    glPopMatrix();
+    glEnd();
+}
 
 
 void DrawCircle(float cx, float cy, float r)
@@ -27,7 +51,7 @@ void DrawCircle(float cx, float cy, float r)
             glVertex2f(x + cx, y + cy);//output vertex
         }
     glEnd();
-    glFlush();
+
 }
 
 void humanface()
@@ -67,7 +91,7 @@ void humanface()
 
 void king()
 {
-
+glPushMatrix();
 
      glColor3f(0.0f, 0.0f, 0.0f); //hair
      DrawCircle(0.2, 0.12, 0.03);
@@ -173,17 +197,27 @@ void king()
 
     glColor3f(0.0f, 0.0f, 0.0f); //left foot
     DrawCircle(0.18, -0.25, 0.011);
-
-
+glEnd();
+glPopMatrix();
+glEnd();
 }
-
+void quads_lower()
+{
+    glColor3f(1.0f,1.0f,1.0f);
+     glBegin(GL_QUADS); // begin drawing a quad
+    glVertex2f(-0.5, -0.5); // bottom left vertex
+    glVertex2f(-0.5, 0.5); // top left vertex
+    glVertex2f(0.5, 0.5); // top right vertex
+    glVertex2f(0.5, -0.5); // bottom right vertex
+    glEnd();
+}
 
 
 
 void quads()
 {
-    glColor3f(0.0f,0.0f,0.0f);
-     glBegin(GL_QUADS); // begin drawing a quad
+
+    glBegin(GL_QUADS); // begin drawing a quad
     glVertex2f(-0.5, -0.5); // bottom left vertex
     glVertex2f(-0.5, 0.5); // top left vertex
     glVertex2f(0.5, 0.5); // top right vertex
@@ -381,6 +415,60 @@ glEnd();
 
 
 glPopMatrix();
+
+}
+
+void member()
+{
+
+
+     glPushMatrix();
+glScalef(0.45f,0.45f,0.0f);
+glTranslatef(-2.03,-1.4f,0.0f);
+    glBegin(GL_POLYGON);
+
+
+	glColor3f(0.0f, 0.0f, 0.0f); // Red
+	// x, y
+	glVertex2f(-0.6f, 0.5f);
+	glVertex2f(-0.4f, 0.75f);
+	glVertex2f(0.3f, 0.75f);
+	glVertex2f(0.3f, 0.5f);
+	glEnd();
+
+    glBegin(GL_POLYGON);
+	glColor3f(1.0, 0.9, 0.8);
+// Red
+	// x, y
+	glVertex2f(-0.22f, -0.06f);
+	glVertex2f(-0.06f, 0.5f);
+	glVertex2f(0.3f, 0.5f);
+	glVertex2f(0.22f, -0.3f);
+
+    glEnd();
+
+   glBegin(GL_TRIANGLES);
+	glColor3f(1.0, 0.9, 0.8);
+    glVertex2f(-0.4f, 0.5f);
+	glVertex2f(-0.06f, 0.5f);
+	glVertex2f(-0.25f, -0.2f);
+	glEnd();
+	   glBegin(GL_POLYGON);
+	glColor3f(0.0f, 0.0f, 0.0f); // Red
+	// x, y
+	glVertex2f(-0.21f, -0.06f);
+	glVertex2f(0.2f, -0.29f);
+	glVertex2f(0.18f, -0.51f);
+	glVertex2f(-0.27f, -0.3f);
+
+    glEnd();
+
+
+
+glEnd();
+glPopMatrix();
+glEnd();
+
 
 }
 void guard()
@@ -925,7 +1013,192 @@ glBegin(GL_POLYGON);
 
 }
 
+void member_of_p(){
+glPushMatrix();
+glTranslatef(-0.54f,0.670f,0.0f);
+glScalef(0.04f,0.05f,0.0f);
+quads();
 
+glPopMatrix();
+glEnd();
+
+
+glPushMatrix();
+glTranslatef(-0.3f,0.7f,0.0f);
+glScalef(1.5f,1.5f,0.0f);
+king();
+
+glPopMatrix();
+glPushMatrix();
+glScalef(0.04f,0.01f,0.0f);
+glTranslatef(0.0f,40.6f,0.0f);
+quads();
+glPopMatrix();
+
+glEnd();
+glPushMatrix();
+glScalef(0.2f,0.2f,0.0f);
+glTranslatef(-2.0f,0.0f,0.0f);
+member();
+//Neck
+
+glPopMatrix();
+
+glPushMatrix();
+glScalef(0.065f,0.15f,0.0f);
+glTranslatef(-9.0f,-1.6f,0.0f);
+glColor3f(0.0f, 0.0f, 1.0f);
+quads();
+glPopMatrix();
+glEnd();
+
+
+
+glPushMatrix();
+glColor3f(0.0f, 0.0f, 1.0f);
+glScalef(0.065f,0.05f,0.0f);
+glTranslatef(-9.0f,-4.0f,0.0f);
+//quads_lower();
+
+glPopMatrix();
+
+
+glEnd();
+glPushMatrix();
+glScalef(0.1f,0.04f,0.0f);
+glTranslatef(-5.7f,-8.4f,0.0f);
+//quads_lower();
+    glEnd();
+    glPopMatrix();
+//Legs
+
+glPushMatrix();
+glTranslatef(-1.3f,-0.2f,0.0f);
+    glLineWidth(14.0f);
+    glBegin(GL_LINES);
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.75f, -0.06f);
+        glVertex2f(0.75f, -0.2f);
+    glEnd();
+
+    glColor3f(0.6f, 0.3f, 0.1f);
+    DrawCircle(0.75, -0.21,0.012);
+
+
+
+
+   glBegin(GL_TRIANGLES);
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.7f, -0.08f);
+        glVertex2f(0.69f, -0.12f);
+        glVertex2f(0.66f, -0.06f);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.7f, -0.08f);
+        glVertex2f(0.76f, -0.09f);
+        glVertex2f(0.69f, -0.12f);
+    glEnd();
+
+    glColor3f(0.6f, 0.3f, 0.1f);
+    DrawCircle(0.78, -0.16,0.012);
+
+    glColor3f(0.6f, 0.3f, 0.1f);
+    DrawCircle(0.79, -0.16,0.011);
+
+    glLineWidth(14.0f);
+        glBegin(GL_LINES);
+        glColor3f(0.0f, 0.0f, 0.0f);
+        glVertex2f(0.75f, -0.07f);
+        glVertex2f(0.775f, -0.16f);
+    glEnd();
+
+glPopMatrix();
+}
+void drawMale() {
+
+    glPushMatrix();
+    glTranslatef(0.0f,-0.2f,0.0f);
+    glScalef(1.0f,1.8f,0.0f);
+    // Draw the shirt
+    glColor3f( 1.0, 1.0, 0.5); // Blue shirt color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.2, 0.0);
+    glVertex2f(-0.2, 0.0);
+    glVertex2f(-0.2, -0.6);
+    glVertex2f(0.2, -0.6);
+    glEnd();
+
+glPopMatrix();
+glEnd();
+
+
+glEnd();
+    // Draw the head
+    glColor3f(1.0, 0.9, 0.8); // Skin color
+    glPushMatrix();
+    glTranslatef(0.0, 0.1, 0.0); // Move up from the body
+    glutSolidSphere(0.20, 16, 16); // Draw the head as a sphere
+    glPopMatrix();
+
+    glEnd();
+    glPushMatrix();
+
+
+glPopMatrix();
+
+
+glPushMatrix();
+glScalef(0.7f,1.0f,0.0f);
+glTranslatef(-0.2f,-0.68f,0.0f);
+      // Draw the legs
+    glColor3f(0.3, 0.3, 0.3); // Dark grey leg color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.05, -0.6);
+    glVertex2f(-0.05, -0.6);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(0.1, -1.0);
+    glEnd();
+
+    // Draw the shoes
+    glColor3f(0.1, 0.1, 0.1); // Black shoe color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.1, -1.0);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(-0.15, -1.1);
+    glVertex2f(0.15, -1.1);
+    glEnd();
+    glPopMatrix();
+
+
+
+
+
+
+
+glPushMatrix();
+glScalef(0.7f,1.0f,0.0f);
+glTranslatef(0.2f,-0.68f,0.0f);
+      // Draw the legs
+    glColor3f(0.3, 0.3, 0.3); // Dark grey leg color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.05, -0.6);
+    glVertex2f(-0.05, -0.6);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(0.1, -1.0);
+    glEnd();
+
+    // Draw the shoes
+    glColor3f(0.1, 0.1, 0.1); // Black shoe color
+    glBegin(GL_POLYGON);
+    glVertex2f(0.1, -1.0);
+    glVertex2f(-0.1, -1.0);
+    glVertex2f(-0.15, -1.1);
+    glVertex2f(0.15, -1.1);
+    glEnd();
+    glPopMatrix();
+}
 
 void display() {
     glClearColor(1.0f, 1.0f, 1.0f, 0.0f); // Set background color to white
@@ -933,6 +1206,7 @@ void display() {
 
 
      glColor3f(0.5, 0.5, 0.5);  // Set color to gray
+
 
     // Draw the base of the pillar
     glBegin(GL_POLYGON);
@@ -1580,6 +1854,15 @@ glColor3f(0.5, 0.5, 0.5);  // Set color to gray
     //glRotatef(80,0.0,1.0,0.0);
 glEnd();
 
+glPushMatrix();
+    glScalef(0.1f,0.3f,0.0f);
+    glTranslatef(9.0,2.5f,0.0f);
+    Design();
+    glPopMatrix();
+
+    glPushMatrix();
+    //glRotatef(80,0.0,1.0,0.0);
+glEnd();
 
 glPushMatrix();
 glTranslatef(-2.0f,0.0f,0.0f);
@@ -1911,30 +2194,18 @@ glTranslatef(-2.2f,5.2f,0.0f);
 
 memberFace();
 glEnd();
+
 glPopMatrix();
 
-
+//Member of parliament
 glPushMatrix();
-glTranslatef(-0.54f,0.670f,0.0f);
-glScalef(0.04f,0.05f,0.0f);
-quads();
+member_of_p();
+glEnd();
 
 glPopMatrix();
 glEnd();
 
-
-glPushMatrix();
-glTranslatef(-0.3f,0.7f,0.0f);
-glScalef(1.5f,1.5f,0.0f);
-king();
-
-glPopMatrix();
-glPushMatrix();
-glScalef(0.04f,0.01f,0.0f);
-glTranslatef(0.0f,40.6f,0.0f);
-quads();
-glPopMatrix();
-    glFlush();
+glFlush();
 
 }
 
@@ -1951,5 +2222,4 @@ int main(int argc, char** argv) {
     glutMainLoop(); // Enter the event-processing loop
     return 0;
 }
-
 

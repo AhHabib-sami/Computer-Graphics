@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1683362717 source:c:\users\ah626\onedrive\desktop\scene2\main.cpp
+1684240789 source:c:\users\ah626\onedrive\desktop\scene2\main.cpp
 	<windows.h>
 	<GL/glut.h>
 	<bits/stdc++.h>
@@ -873,4 +873,23 @@
 
 1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\gl\glu.h
 	<GL/gl.h>
+
+1526093416 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\math.h
+	<crtdefs.h>
+
+1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\time.h
+	<crtdefs.h>
+	<_timeval.h>
+	<sys/timeb.h>
+	<pthread_time.h>
+
+1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\sys\timeb.h
+	<crtdefs.h>
+	<sec_api/sys/timeb_s.h>
+
+1526093414 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\sec_api\sys\timeb_s.h
+	<sys/timeb.h>
+
+1526093420 c:\program files\codeblocks\mingw\x86_64-w64-mingw32\include\pthread_time.h
+	<sys/timeb.h>
 
